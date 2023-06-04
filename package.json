@@ -1,0 +1,17 @@
+{
+  "name": "shoplogoanswearcucumbercypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "HoroBird",
+  "license": "ISC",
+    "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.2.0",
+    "@cypress/browserify-preprocessor": "latest",
+    "cypress": "latest"
+  }
+}
