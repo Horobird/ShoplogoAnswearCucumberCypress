@@ -11,15 +11,15 @@ Feature: Buy Sneakers
     Given "Man" Bob go to shop 'https://answear.ua/ru' for "Кроссовки"
     And selection "<param>", "<data>" and "<id>":
       | param  | data    | id                        |
-      | Цена   | 3500    | #PriceFilterRangeInputMax |
-      | Размер | 42      | #baseSearch               |
-      | Цвет   | голубой | span[`${element.data}`]   |
+      | Цена   | 4000    | #PriceFilterRangeInputMax |
+      | Размер |  42     | #baseSearch               |
+      | Цвет   | чёрный | span[`${element.data}`]   |
 # When  Bob selects Sneakers and go to bascet 'https://answear.ua/ru/cart'
 #   # And He selects size for Sneakers
 #   # And He selects color for Sneakers
 # Then  Bob checks
 # | Цена  | Размер  | Цвет |
-# | <=3500 | 42    |  blue |
+# | <=3500 | 42     |  blue |
 
 # Scenario: Bob buy Sneakers
 #   Given Bob go to 'https://answear.ua/ru/checkout?step=1'

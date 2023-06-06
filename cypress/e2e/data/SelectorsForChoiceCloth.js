@@ -1,5 +1,5 @@
 export class SelectorsForChoiceCloth {
-  // Соглащаемся с куки
+  // Соглашаемся с куки
   cookies =
     ".CookiesInfo__cookiesInfoBtnWrapper__3q6Ss > .btn--primary > .flex";
   // Выбираем пол
@@ -10,7 +10,8 @@ export class SelectorsForChoiceCloth {
     'span[class="SubcategoryAccordion__subcategoryAccordionCategoryName__aEo5o"]';
   choiceParam =
     '[class="BaseSelectDropdown__select__Wc73+ BaseSelectDropdown__selectEllipsis__7yf8v Filters__filterItem__IhPPd"]';
-  choiceClothImage = "[class='Image__imageWrapper__R-bNK Image__media__sGPq+']";
+  choiceClothImage =
+    ".ProductItem__productCard__8ivfZ";
   // Категории одежды
   news = ".SubcategoriesMenu__subsectionListItemLink__UZvxT";
   cloth = ".SubcategoriesMenu__subsectionListItem__aEZsz";
