@@ -1,18 +1,20 @@
 export class SelectorsForChoiceCloth {
-  // Соглашаемся с куки
+  // Селектор для соглашаемся с куки
   cookies =
     ".CookiesInfo__cookiesInfoBtnWrapper__3q6Ss > .btn--primary > .flex";
-  // Выбираем пол
+  // Селектор пол
   choiceGender = " > .CategoriesSection__menuLink__CrqSv";
+  // Селектор видов одежды (одежда, обувь и т.д.)
   choiceCloth =
     " > .SubcategoriesMenu__subsectionList__dDKxb > :nth-child(3) > .SubcategoriesMenu__subsectionListItemLink__UZvxT";
-  choiceClothType =
-    'span[class="SubcategoryAccordion__subcategoryAccordionCategoryName__aEo5o"]';
+  // Селектор типов (ботинки, кроссовки и т.д.)
+  choiceClothType = ".SubcategoriesMenu__subsectionMenuFlash__J1gOQ";
+  // Селектор контейнера параметров товара
   choiceParam =
     '[class="BaseSelectDropdown__select__Wc73+ BaseSelectDropdown__selectEllipsis__7yf8v Filters__filterItem__IhPPd"]';
-  choiceClothImage =
-    ".ProductItem__productCard__8ivfZ";
-  // Категории одежды
+  // Селектор фото отобранных товаров
+  choiceClothImage = ".ProductItem__productCard__8ivfZ";
+  // Селекторы категории одежды
   news = ".SubcategoriesMenu__subsectionListItemLink__UZvxT";
   cloth = ".SubcategoriesMenu__subsectionListItem__aEZsz";
   shoes = ".SubcategoriesMenu__subsectionListItem__aEZsz";

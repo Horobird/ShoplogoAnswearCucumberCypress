@@ -12,14 +12,19 @@ Feature: Buy Sneakers
     And selection "<param>", "<data>" and "<id>":
       | param  | data    | id                        |
       | Цена   | 4000    | #PriceFilterRangeInputMax |
-      | Размер |  42     | #baseSearch               |
-      | Цвет   | чёрный | span[`${element.data}`]   |
-# When  Bob selects Sneakers and go to bascet 'https://answear.ua/ru/cart'
-#   # And He selects size for Sneakers
-#   # And He selects color for Sneakers
-# Then  Bob checks
-# | Цена  | Размер  | Цвет |
-# | <=3500 | 42     |  blue |
+      | Размер |  40     | #baseSearch               |
+      | Цвет   | голубой | span[`${element.data}`]   |
+  
+    When adds it to "basket"
+    And go to the "basket"
+  
+Then  Bob checks "<param>","<data>" and "<id>"
+| param            | data    | id                                              | teg  | nEq |
+| Товара в корзине | 1       | .CartItem__cartItemRow__jG5Ns                   |      |     |
+| Цена             | 4000    | .CartItem__sectionWrapper__VNeYo                | span | 0   |
+| Размер           | 40      | p[class*='CartInfo__textBold__xUTfb']           | span | 0   |
+      | Цвет | голуб | .CartItem__sectionWrapper__VNeYo | p | 1 |
+| Кол-во           | 1       | [class^='QuantitySelectorTemplate__quantity']   | span | 1   |
 
 # Scenario: Bob buy Sneakers
 #   Given Bob go to 'https://answear.ua/ru/checkout?step=1'

@@ -1,4 +1,5 @@
 {
+  "e2e": "cypress open",
   "name": "shoplogoanswearcucumbercypress",
   "version": "1.0.0",
   "description": "",
@@ -9,9 +10,11 @@
   "keywords": [],
   "author": "HoroBird",
   "license": "ISC",
-    "dependencies": {
+  "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^17.2.0",
-    "@cypress/browserify-preprocessor": "latest",
-    "cypress": "latest"
+    "@cypress/browserify-preprocessor": "latest"
+  },
+  "devDependencies": {
+    "cypress": "^12.13.0"
   }
 }
