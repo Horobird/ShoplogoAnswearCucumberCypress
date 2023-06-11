@@ -7,7 +7,7 @@ import { SelectorsForChoiceCloth } from "./data/SelectorsForChoiceCloth";
 const selectorsForChoiceCloth = new SelectorsForChoiceCloth();
 let min = 1;
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min - 1; //Максимум и минимум включаются
+  return Math.floor(Math.random() * (max - min)) + min - 1;
 }
 let size;
 let childN;
@@ -15,36 +15,40 @@ beforeEach(() => {
   // run these tests as if in a desktop browser with a 1920p monitor
   cy.viewport(1920, 1080);
 });
-Given(
-  "{string} Bob go to shop {string} for {string}",
-  (gender, url, sneakers) => {
-    cy.visit(url);
-    cy.log("Соглашаемся с куки");
-    cy.get(selectorsForChoiceCloth.cookies).click();
-   cy.log('Выбираем пол и проверяем кнопку "Он" ("Она")')
-    if (gender === "Woman") {
-      childN = 1;
-    } else {
-      childN = 2;
-    }
-    cy.get(`:nth-child(${childN}) ${selectorsForChoiceCloth.choiceGender}`)
-      .should("be.visible")
-      .click();
-    cy.log("выбираем вид одежды (одежда, обувь и т.д.)");
-    cy.get(`:nth-child(${childN}) ${selectorsForChoiceCloth.choiceCloth}`)
-      .should("be.visible")
-      .trigger("mouseover");
-    cy.log("выбираем тип (ботинки, кроссовки и т.д.)");
-    cy.get(selectorsForChoiceCloth.choiceClothType)
-      .contains(sneakers)
-      .should("be.visible")
-      .click();
+Given("Bob goes to the store {string}", (url, sneakers) => {
+  cy.visit(url);
+  cy.log("Соглашаемся с куки");
+  cy.get(selectorsForChoiceCloth.cookies).click();
+});
+Given("he chooses clothes for {string}", (gender) => {
+  //cy.log('Выбираем пол и проверяем кнопку "Он" ("Она")');
+  if (gender === "woman") {
+    childN = 1;
+  } else {
+    childN = 2;
   }
-);
-Given('selection "<param>", "<data>" and "<id>":', (DataTable) => {
+  cy.get(`:nth-child(${childN}) ${selectorsForChoiceCloth.choiceGender}`)
+    .should("be.visible")
+    .click();
+});
+Given("Bob selects goods {string}", (shoes) => {
+  //cy.log("выбираем вид одежды (одежда, обувь и т.д.)");
+  cy.get(`:nth-child(${childN}) ${selectorsForChoiceCloth.choiceCloth}`)
+    .should("be.visible")
+    .trigger("mouseover");
+});
+Given("he selects shoe for {string}", (sneakers) => {
+  cy.log("выбираем тип (ботинки, кроссовки и т.д.)");
+  cy.get(selectorsForChoiceCloth.choiceClothType)
+    .contains(sneakers)
+    .should("be.visible")
+    .click();
+});
+Given("Bob chooses clothing options", (DataTable) => {
   const result = DataTable.hashes();
   cy.log("Делаем отбор по параметрам (цена, размер и т.д.)");
   for (let el of result) {
+    cy.log("выбираем", el.param);
     cy.get(selectorsForChoiceCloth.choiceParam)
       .contains(el.param)
       .should("be.visible")
@@ -64,6 +68,8 @@ Given('selection "<param>", "<data>" and "<id>":', (DataTable) => {
       cy.log("size=", size);
     }
   }
+});
+Given("Bob chooses one of his favorites", () => {
   cy.get(selectorsForChoiceCloth.choiceClothImage).then((namberClothType) => {
     namberClothType = Cypress.$(
       selectorsForChoiceCloth.choiceClothImage
@@ -74,9 +80,11 @@ Given('selection "<param>", "<data>" and "<id>":', (DataTable) => {
       .should("be.visible")
       .click();
   });
- cy.log("Еще раз выбираем (подтверждаем) размер");
-  cy.scrollTo(500, 0);
-  cy.contains("Выбрать размер").should("be.visible").click({ force: true });
+});
+Given("hi in the selected confirms the option {string}", (option) => {
+  cy.log("Еще раз выбираем (подтверждаем) размер");
+  // cy.scrollTo(500, 0);
+  cy.contains(option).should("be.visible").click({ force: true });
   cy.get(".BaseSelectItem__selectItemLabel__usttW")
     .contains(size)
     .should("be.visible")
@@ -91,15 +99,13 @@ When('go to the "basket"', function (basket) {
   cy.get(".RoundBadge__badge__ynfzx").should("be.visible").click();
 });
 Then(
-  "Bob checks {string},{string} and {string}",
-  (param, data, id, DataTable) => {
+  "Bob checks the parameters of the selected clothes in the basket",
+  (DataTable) => {
     const result = DataTable.hashes();
-    cy.log("Проверка параметров товара в корзине");
     cy.get(".CartItem__sectionWrapper__VNeYo").then((selectors) => {
-      // selectors - блоки div с параметрами или кол-во видов товаров
       selectors = Cypress.$(".CartItem__sectionWrapper__VNeYo").length;
-  cy.log("Перебор по видам товаров в корзине");
       for (let el of result) {
+        cy.log("Проверка", el.param);
         cy.get(".CartItem__sectionWrapper__VNeYo")
           .contains(el.param)
           .should("be.visible")
