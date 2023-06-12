@@ -5,10 +5,13 @@ export class SelectorsForChoiceCloth {
   // Селектор пол
   choiceGender = " > .CategoriesSection__menuLink__CrqSv";
   // Селектор видов одежды (одежда, обувь и т.д.)
-  choiceCloth =
-    " > .SubcategoriesMenu__subsectionList__dDKxb > :nth-child(3) > .SubcategoriesMenu__subsectionListItemLink__UZvxT";
+  choiceCloth1 = //'li[class="SubcategoriesMenu__subsectionListItem__aEZsz"]';
+    " > .SubcategoriesMenu__subsectionList__dDKxb > :nth-child(";
   // Селектор типов (ботинки, кроссовки и т.д.)
-  choiceClothType = ".SubcategoriesMenu__subsectionMenuFlash__J1gOQ";
+  choiceCloth2 =") > .SubcategoriesMenu__subsectionListItemLink__UZvxT";
+  choiceClothType =
+    //"span[class='SubcategoryAccordion__subcategoryAccordionCategoryName__aEo5o']";
+    ".SubcategoriesMenu__subsectionMenuFlash__J1gOQ";
   // Селектор контейнера параметров товара
   choiceParam =
     '[class="BaseSelectDropdown__select__Wc73+ BaseSelectDropdown__selectEllipsis__7yf8v Filters__filterItem__IhPPd"]';
