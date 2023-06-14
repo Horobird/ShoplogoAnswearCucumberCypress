@@ -5,7 +5,7 @@ const {
 } = require("@badeball/cypress-cucumber-preprocessor");
 import { SelectorsForChoiceCloth } from "./data/SelectorsForChoiceCloth";
 const selectorsForChoiceCloth = new SelectorsForChoiceCloth();
-let min = 1;
+//  Функція рандомного вибору
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min - 1;
 }
@@ -28,7 +28,7 @@ Given("hi  chooses the language {string}", (language) => {
     .click();
 });
 Given("he chooses clothes for {string}", (gender) => {
-  cy.log('Вибираємо "Він" ("Вона") та перевіряємо цю кнопку');
+  cy.log('Вибираємо стать "Він" ("Вона") та перевіряємо цю кнопку');
   if (gender === "woman") {
     childN = 1;
   } else {
@@ -93,7 +93,7 @@ Given("Bob chooses one of his favorites", () => {
     ).length;
     cy.log("Рандомно вибираємо один екземпляр для покупки");
     cy.get(selectorsForChoiceCloth.choiceClothImage)
-      .eq(getRandomInt(min, namberClothType))
+      .eq(getRandomInt(1, namberClothType))
       .should("be.visible")
       .click();
   });
@@ -105,28 +105,28 @@ Given("hi in the selected confirms the option {string}", (option) => {
     // .contains(option)
     .should("be.visible")
     .click({ force: true });
-  cy.get(".BaseSelectItem__selectItemLabel__usttW")
+  cy.get(selectorsForChoiceCloth.sizeClick)
     .contains(size)
     .should("be.visible")
     .click();
 });
 When("adds it to basket", function () {
-  cy.get(".ProductActive__cartConfirmationAddToCartWrapper__LIIqK > .btn")
+  cy.get(selectorsForChoiceCloth.addToBasket)
     .should("be.visible")
     .click({ force: true });
 });
 When("go to the basket", function () {
-  cy.get(".RoundBadge__badge__ynfzx").should("be.visible").click();
+  cy.get(selectorsForChoiceCloth.enterToBasket).should("be.visible").click();
 });
 Then(
   "Bob checks the parameters of the selected clothes in the basket",
   (DataTable) => {
     const result = DataTable.hashes();
-    cy.get(".CartItem__sectionWrapper__VNeYo").then((selectors) => {
+    cy.get(selectorsForChoiceCloth.paramsInBasket).then((selectors) => {
       selectors = Cypress.$(".CartItem__sectionWrapper__VNeYo").length;
       for (let el of result) {
         cy.log("Перевірка", el.param);
-        cy.get(".CartItem__sectionWrapper__VNeYo")
+        cy.get(selectorsForChoiceCloth.paramsInBasket)
           .contains(el.param)
           .should("be.visible")
           .get(el.id)
