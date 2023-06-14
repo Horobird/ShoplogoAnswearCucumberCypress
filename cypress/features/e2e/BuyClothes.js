@@ -100,8 +100,11 @@ Given("Bob chooses one of his favorites", () => {
 });
 Given("hi in the selected confirms the option {string}", (option) => {
   cy.log("Ще раз вибираємо (підтверджуємо) розмір");
-  // cy.scrollTo(500, 0);
-  cy.contains(option).should("be.visible").click({ force: true });
+  cy.scrollTo(500, 0);
+  cy.get(selectorsForChoiceCloth.confirmSize)
+    // .contains(option)
+    .should("be.visible")
+    .click({ force: true });
   cy.get(".BaseSelectItem__selectItemLabel__usttW")
     .contains(size)
     .should("be.visible")
