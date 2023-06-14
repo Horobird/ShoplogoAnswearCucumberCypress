@@ -12,5 +12,7 @@ It was purely accidental for the purity of the experiment.
 + The second goal - the development of a template (behavior) automatic testing for similar products. 
 
 It is possible that the author invents a bicycle, so would be grateful for any advice or assistance.
-[For illustrative purposes](https://youtu.be/5LHoWFp18Jc)
-[![page](https://i9.ytimg.com/vi_webp/5LHoWFp18Jc/mq2.webp?sqp=CPjupqQG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEkgSyhlMA8=&rs=AOn4CLBzk_AlDxDfZOZk9-G8KRYKMOap9g)](https://youtu.be/5LHoWFp18Jc)
+
+**For illustrative purposes:**                   
+
+ >>>>>[![page](https://i9.ytimg.com/vi_webp/5LHoWFp18Jc/mq1.webp?sqp=CPjupqQG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGCwgVyh_MA8=&rs=AOn4CLCAJAoYzejT4mbuhiNdv_X3aKWaYQ)](https://youtu.be/5LHoWFp18Jc)
