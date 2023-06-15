@@ -1,6 +1,6 @@
 {
   "e2e": "cypress open",
-  "name": "shoplogoanswearcucumbercypress",
+  "name": "TestingShopCucumberCypress",
   "version": "1.7.0",
   "description": "",
   "main": "cypress.config.js",

@@ -9,11 +9,13 @@ The task of the project is the application in automatic testing of tools from [C
 [cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor).
 **Testing_Shop_Cucumber_Cypress** for testing used online store Answear.*, to which has no relation and choice 
 It was purely accidental for the purity of the experiment.
-+ The main objective of the project is a visual and accessible testing of the product for the customer. That is, according to a scenario understandable for the Customer, the Developer and QA, it is possible to check any endpoints of the product. The script changes - the test code does not change.
++ The main objective of the project is a visual and accessible testing of the product for the customer. That is, according to a scenario understandable for the Customer, the Developer and QA, it is possible to check any endpoints of the product. The scenario changes - the test code does not change.
 + The second goal - the development of a template (behavior) automatic testing for similar products. 
 
 It is possible that the author invents a bicycle, so would be grateful for any advice or assistance.
 
 For illustrative purposes:                   
 
-   [![page](https://i9.ytimg.com/vi_webp/5LHoWFp18Jc/mq1.webp?sqp=CPjupqQG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGCwgVyh_MA8=&rs=AOn4CLCAJAoYzejT4mbuhiNdv_X3aKWaYQ)](https://youtu.be/5LHoWFp18Jc)        
+[![Alt text](image.png)](https://youtu.be/5LHoWFp18Jc)   
+
+This is one of my first jobs as a QA machine. It does not carry a commercial load and is performed solely for the acquisition of skills.
