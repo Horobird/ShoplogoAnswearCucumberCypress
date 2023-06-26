@@ -19,4 +19,4 @@ It is possible that the author invents a bicycle, so would be grateful for any a
 
 [![Alt text](image.png)](https://youtu.be/5LHoWFp18Jc)   
 
- :point_up: This is one of my first jobs as a QA machine. It does not carry a commercial load and is performed solely for the acquisition of skills.
+ :point_up: This is one of my first jobs as a QA machine. It does not carry a commercial load and is performed solely for the acquisition of skills. I will be glad not only that this example may be useful to someone, but also grateful if I receive comments and corrections to it.
