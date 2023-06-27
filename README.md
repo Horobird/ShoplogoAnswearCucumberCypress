@@ -15,7 +15,7 @@ It was purely accidental for the purity of the experiment.
 
 It is possible that the author invents a bicycle, so would be grateful for any advice or assistance.
 
- :small_orange_diamond: For illustrative purposes:                   
+ :small_orange_diamond: For illustrative purposes video:                   
 
 [![Alt text](image.png)](https://youtu.be/5LHoWFp18Jc)   
 
